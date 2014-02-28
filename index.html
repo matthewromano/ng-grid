@@ -1,142 +1,113 @@
-<!doctype html>
-<html lang="en" ng-app="myApp">
-<head>
-	<meta charset="utf-8">
-	<title>ng-grid</title>
-	<link rel="stylesheet" href="css/ng-grid.css"/>
-    <link rel="stylesheet" href="lib/FortAwesome-Font-Awesome-ee55c85/css/font-awesome.css" />	
-	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css"/>
-	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-responsive.css"/>
-	<link rel="stylesheet" href="css/prettify.css"/>
-	<link rel="stylesheet" href="lib/jquery-ui/css/overcast/jquery-ui-1.9.1.custom.css" />
-	<link rel="stylesheet" href="css/app.css"/>
+<!DOCTYPE html>
+<html>
 
-	<script type="text/javascript" src="lib/prettify.js"></script>
-	<script type="text/javascript" src="lib/jquery-1.8.2.min.js"></script>
-	<script type="text/javascript" src="lib/jquery-ui/js/jquery-ui-1.9.1.custom.js"></script>
-	<script type="text/javascript" src="lib/angular.js"></script>
-	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="lib/ng-grid.debug.js"></script>
-	<script type="text/javascript" src="lib/ng-grid-layout.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/services.js"></script>
-	<script type="text/javascript" src="js/directives.js"></script>
-	<script type="text/javascript" src="js/controllers.js"></script>
-	<script type="text/javascript" src="js/exampleControllers.js"></script>
-</head>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="ng-grid : Angular Data Grid based on slickgrid/koGrid" />
 
-<body>
-	<header class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<div class="dropdown pull-left">
-					<a class="brand dropdown-toggle" role="button" data-toggle="dropdown" href="#"> 
-						ng-grid
-						<b class="caret"></b>
-					</a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-						<li><a href="https://github.com/angular-ui/"><strong>Related Projects:</strong></a></li>
-						<li class="divider"></li>
-						<li><a href="http://angular-ui.github.com/">AngularUI</a></li>
-						<li><a href="http://angular-ui.github.com/bootstrap/">Bootstrap</a></li>
-						<li><a href="https://github.com/angular-ui/AngularJs.tmbundle">AngularJS.tmbundle</a></li>
-						<li><a href="http://angular-ui.github.io/ui-router/sample/">Router <span class="label label-success">New!</span></a></li>
-						<li><a href="http://angular-ui.github.com/Tips-n-Tricks/">Tips-n-Tricks <span class="label">WIP</span></a></li>
-					</ul>
-				</div>
-				<div class="nav-collapse">
-					<ul class="nav bs-docs-sidebar">
-						<li>
-							<a scrollto="" href="#top">Home</a>
-						</li>	
-						<li>
-							<a scrollto="" href="#gettingStarted">Getting Started</a>
-						</li>					
-						<li class="dropdown">
-							<a class="dropdown-toggle" href="#" data-toggle="dropdown">
-								Examples
-								<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu">									
-								<li><a scrollto href="#basic">Basic</a></li>
-								<li><a scrollto href="#columnDefs">Column Definitions</a></li>
-								<li><a scrollto href="#grouping">Grouping</a></li>
-								<li><a scrollto href="#templates">Templates</a></li>
-								<li><a scrollto href="#themes">Themes</a></li>
-								<li><a scrollto href="#paging">Server-Side Paging</a></li>
-								<li><a scrollto href="#masterdetail">Master/Detail</a></li>
-								<li><a scrollto href="#cellSelection">Cell Selection</a></li>
-								<li><a scrollto href="#rowSelection">Row Selection</a></li>
-								<li><a scrollto href="#columnPinning">Column Pinning</a></li>
-							</ul>
-						</li>		
-						<li>
-							<a scrollto="" href="#api">API</a>
-						</li>			
-					</ul>
-					<ul class="pull-right nav">
-						<li><a href="https://github.com/angular-ui/ng-grid/graphs/contributors">Contributors</a></li>
-						<li class="dropdown">
-							<a href="#" data-toggle="dropdown" class="dropdown-toggle">
-								Need Help?
-								<b class="caret"></b>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="https://github.com/angular-ui/ng-grid/issues?sort=updated&amp;state=open">ng-grid broken or want a new feature?</a></li>
-								<li><a href="https://github.com/angular-ui/ng-grid/issues?labels=demos&amp;sort=updated&amp;state=open">Demo page broken or missing demos?</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</header>
-	<div style="margin: 32px;" id="top"></div>
-	<div data-spy="scroll" data-target=".bs-docs-sidebar">
-		<header class="hero-unit" id="overview">
-			<div class="container">
-				<h1>
-					ng-grid
-				</h1>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-				<p>Angular Data Grid written in <strong><a href="http://angularjs.org">AngularJS</a></strong> and <strong><a href="http://jquery.com">jQuery</a></strong> by the <strong><a href="http://angular-ui.github.com">AngularUI Team</a></strong></p>
+    <title>ng-grid</title>
+  </head>
 
-				<p class="btn-group">
-					<a class="btn btn-primary" href="https://github.com/angular-ui/ng-grid/zipball/master"><i class="icon-white icon-download-alt"></i> Download ZIP</a>
-					<a class="btn" href="https://github.com/angular-ui/ng-grid"><i class="icon-github"></i> Code on Github</a>
-					<a class="btn btn-primary" href="https://github.com/angular-ui/ng-grid/tarball/master"><i class="icon-white icon-download-alt"></i> Download TAR</a>
-				</p>
-			</div>
-			<div class="bs-docs-social">
-				<div class="container">
-					<ul class="bs-docs-social-buttons">
-						<li>
-							<iframe src="http://ghbtns.com/github-btn.html?user=angular-ui&amp;repo=ng-grid&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-						</li>
-						<li>
-							<iframe src="http://ghbtns.com/github-btn.html?user=angular-ui&amp;repo=ng-grid&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</header>
-		<div ng-include="'partials/gettingStartedPage.html'"></div>
-		<div ng-include="'partials/examplesPage.html'"></div>
-		<div ng-include="'partials/apiPage.html'" style="clear: both"></div>
-		<div style="margin: 32px;"></div>
-	</div>
-    <script type="text/javascript">
+  <body>
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-17352735-3']);
-  _gaq.push(['_trackPageview']);
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/matthewromano/ng-grid">View on GitHub</a>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+          <h1 id="project_title">ng-grid</h1>
+          <h2 id="project_tagline">Angular Data Grid based on slickgrid/koGrid</h2>
 
-</script>
-</body>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/matthewromano/ng-grid/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/matthewromano/ng-grid/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="nggrid--an-angular-datagrid" class="anchor" href="#nggrid--an-angular-datagrid"><span class="octicon octicon-link"></span></a>ngGrid : An Angular DataGrid</h1>
+
+<p><strong>Contributors:</strong></p>
+
+<p>ng-grid Team:</p>
+
+<ul>
+<li><a href="http://ornerydevelopment.blogspot.com/">Tim Sweet</a></li>
+<li><a href="https://github.com/xcrico">Jonathon Ricaurte</a></li>
+</ul><p>Based on koGrid:</p>
+
+<ul>
+<li><a href="https://github.com/ericmbarnard/KoGrid">Eric M. Barnard</a></li>
+</ul><p>License: <a href="http://www.opensource.org/licenses/mit-license.php">MIT</a></p>
+
+<p>Dependencies: jQuery &amp; angular.js</p>
+
+<hr><h2>
+<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
+
+<p><strong>ng-grid</strong> Originally built on knockout we wanted to port it to angular.</p>
+
+<h2>
+<a name="disclaimer" class="anchor" href="#disclaimer"><span class="octicon octicon-link"></span></a>Disclaimer</h2>
+
+<p>ng-grid is in pre-beta release currently. We are going to be adding more features here as we head to a 1.0 release.</p>
+
+<hr><p><em>The bare bones</em>:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"angular.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"ng-grid.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'myApp'</span><span class="p">,[</span><span class="s1">'ngGrid'</span><span class="p">,</span> <span class="p">...</span> <span class="p">{</span><span class="nx">other</span> <span class="nx">includes</span><span class="p">}]);</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"../ng-grid.css"</span> <span class="nt">/&gt;</span> 
+<span class="nt">&lt;body</span> <span class="na">ng-app=</span><span class="s">"myApp"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">ng-grid=</span><span class="s">"myOptions"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+</pre></div>
+
+<div class="highlight highlight-javascript"><pre><span class="c1">// Define your own controller somewhere..</span>
+<span class="kd">function</span> <span class="nx">MyCtrl</span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">myData</span> <span class="o">=</span> <span class="p">[{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Moroni"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">50</span><span class="p">},</span>
+                     <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Tiancum"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">43</span><span class="p">},</span>
+                     <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Jacob"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">27</span><span class="p">},</span>
+                     <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Nephi"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">29</span><span class="p">},</span>
+                     <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Enos"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">34</span><span class="p">}];</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">myOptions</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">data</span><span class="o">:</span> <span class="nx">myData</span> <span class="p">};</span>
+<span class="p">};</span>
+
+</pre></div>
+
+<h2>
+<a name="want-more" class="anchor" href="#want-more"><span class="octicon octicon-link"></span></a>Want More?</h2>
+
+<p>Check out the <a href="https://github.com/Crash8308/ng-grid/wiki/Getting-Started">Getting Started</a> and other <a href="https://github.com/Crash8308/ng-grid/wiki">Docs</a></p>
+
+<h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>Coming soon...</p>
+
+<h2>
+<a name="change-log" class="anchor" href="#change-log"><span class="octicon octicon-link"></span></a>Change Log</h2>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">ng-grid maintained by <a href="https://github.com/matthewromano">matthewromano</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
 </html>
