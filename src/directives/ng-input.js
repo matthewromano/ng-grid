@@ -15,6 +15,7 @@ ngGridDirectives.directive('ngInput', [function() {
                     case 38: // Up arrow
                     case 39: // Right arrow
                     case 40: // Down arrow
+						alert('down!');
                         evt.stopPropagation();
                         break;
                     case 27: // Esc (reset to old value)
